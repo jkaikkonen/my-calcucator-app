@@ -1,4 +1,4 @@
-import './styles.css';
+import './styles.css'
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
       <button className='span-two'>=</button>
     
     </div>
-  );
+  )
 }
 
 export default App;
