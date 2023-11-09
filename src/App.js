@@ -30,7 +30,6 @@ function reducer(state, { type, payload }) {
       }
   }
 }
-
 function App() {
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
     reducer,{})
