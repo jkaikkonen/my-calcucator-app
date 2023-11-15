@@ -1,9 +1,9 @@
-import React, { useReducer } from 'react';
+import  useReducer from 'react';
 import './styles.css';
-import DigitButton from './DigitButton';
-import OperationButton from './OperationButton';
+import DigitButton from './DigitButton'; 
+import OperationButton  from './OperationButton';
 
-export const ACTIONS = {
+ export const ACTIONS = {
   ADD_DIGIT: "add-digit",
   CHOOSE_OPERATION: "choose-operation",
   CLEAR: "clear",
@@ -169,5 +169,5 @@ function App() {
   )
 }
 
-export default App;
+export default App
 
