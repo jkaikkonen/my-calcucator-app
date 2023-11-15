@@ -33,7 +33,7 @@ function reducer(state, { type, payload }) {
       }
       return {
         ...state,
-        currentOperand: `${state.currentOperand || ""}${action.payload.digit}`,
+        currentOperand: `${state.currentOperand || ""}${payload.digit}`,
       };
       case ACTIONS.CHOOSE_OPERATION:
           if (state.currentOperand == null && state.previousOperand == null) {
@@ -102,21 +102,22 @@ function evaluate({ currentOperand, previousOperand, operation}) {
   const prev = parseFloat(previousOperand)
   const current = parseFloat(currentOperand)
   if (isNaN(prev) || isNaN(current)) return ""
-  let compuation = "";
+  let computation = "";
   switch (operation) {
     case "+":
-      compuation = prev + current;
+      computation = prev + current;
       break;
     case "-":
-      compuation = prev - current;
+      computation = prev - current;
       break;
     case "/":
-      compuation = prev / current;
+      computation = prev / current;
+      break;
     case "*":
       computation = prev * current;
       break;
   }
-return compuation.toString()
+return computation.toString()
 }
 
 const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
@@ -125,8 +126,8 @@ const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
 function formatOperand(operand) {
   if (operand == null) return
   const [INTEGER_FORMATTER, decimal] = operand.split(".")
-  if (decimal == null) return INTEGER_FORMATTER.format(integer)
-  return `${INTEGER_FORMATTER.format(integer)}.${decimal}`
+  if (decimal == null) return INTEGER_FORMATTER.format(INTEGER_FORMATTER)
+  return `${INTEGER_FORMATTER.format(INTEGER_FORMATTER)}.${decimal}`
 
 }
 
