@@ -1,6 +1,6 @@
 import  { ACTIONS } from "./App"
 
-export default function OperationButton( {dispatch, operation}) {
+function OperationButton( {dispatch, operation}) {
     return (
          <button onClick={ () => dispatch ({type: ACTIONS.CHOOSE_OPERATION, payload: { operation } })}
     >
@@ -8,3 +8,4 @@ export default function OperationButton( {dispatch, operation}) {
      </button>
     )
 }
+export default OperationButton;
